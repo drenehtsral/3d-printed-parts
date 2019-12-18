@@ -1,0 +1,55 @@
+BSD 3-Clause License (tweaked for CAD rather than computer code).
+
+Copyright (c) 2019, Lars Friend
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice, this
+   list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright notice,
+   this list of conditions and the following disclaimer in the documentation
+   and/or other materials provided with the distribution.
+
+3. Neither the name of the copyright holder nor the names of its
+   contributors may be used to endorse or promote products derived from
+   this software without specific prior written permission.
+
+My intent is to allow anyone who wishes to make use of these to do so without incurring
+liability on account of someone else's injudicious (or even merely unlucky) use of
+physical objects built according to designs found in this repository (whether modified
+or not).
+
+In this regard I'm inclined to view "source code" to be, clearly and without ambiguity,
+the OpenSCAD input files from which one may generate CAD drawings or STL files.  These are,
+in the same manner as source code of traditional programming languages, a compact
+representation of the critical concept encoded in a form that can be read and transformed
+by software and humans, and which humans can additionally modify or learn from as they are
+wont to do.
+
+The analogy gets a bit fuzzier when it comes to an analogy to a compiled binary from such source.
+Clearly, an STL file is something akin to this;  It becomes less compact, more explicit, and much
+harder (but far from impossible) for a person to usefully modify it without significant automated
+assistance.  If you then take that STL file and run it through a slicer to generate gcode which
+can then be directly fed as literal toolpaths to a robot which will 3D print, mill, etc. materials
+to create a physical object.
+
+There is a parallel with a multi-step compilation process from a high-level language to a
+machine-agnostic intermediate representation or bytecode (analogous SCAD-->STL) which is
+somewhat more verbose and more explicit than the high-level source.  Then this intermediate form
+can further be compiled into a yet more verbose and explicit machine specific final output
+(analogous to STL-->gcode).  This analogy makes no attempt to find a parallel for the physical
+object(s) produced by executing the tool-paths specified in the gcode on a suitable machine...
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
