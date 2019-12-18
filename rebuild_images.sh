@@ -1,7 +1,7 @@
 #!/bin/bash
 
 tmp_file=$(mktemp)
-echo "#Contents" > ${tmp_file}
+echo -e "# Contents\n" > ${tmp_file}
 
 find . -type f -name '*.scad' | (while read model; do
     model_name="$(basename ${model%%.scad})"
@@ -15,7 +15,7 @@ find . -type f -name '*.scad' | (while read model; do
     if [ "${model}" -nt "${img_out}" ]; then
         if openscad --render --projection=p --viewall --autocenter --imgsize 320,240 -o "${img_out}" "${model}"; then
             echo "Rendered ${model} to ${img_out}."
-            echo "[![${model}](${img_out})](${model})" >> ${tmp_file}
+            echo -e  "\n${model}: [![${model}](${img_out})](${model})\n" >> ${tmp_file}
         else
             code=$?
             echo "Cannot create image of ${model}."
@@ -23,7 +23,7 @@ find . -type f -name '*.scad' | (while read model; do
         fi
     else
         echo "${model} older than ${img_out} ... skipping."
-        echo "[![${model}](${img_out})](${model})" >> ${tmp_file}
+        echo -e  "\n${model}: [![${model}](${img_out})](${model})\n" >> ${tmp_file}
     fi
 done; )
 
